@@ -1,0 +1,84 @@
+{
+  "schema_version": "1",
+  "tool": {
+    "name": "tasks",
+    "display_name": "Tasks CLI",
+    "description": "A tiny demo CLI used by CLI Contract Guard's worked example."
+  },
+  "stability": {
+    "policy": "minor",
+    "audiences": ["humans", "scripts"]
+  },
+  "streams": {
+    "stdout": "data and primary output only",
+    "stderr": "diagnostics, progress, errors only"
+  },
+  "exit_codes": [
+    {"code": 0, "meaning": "success"},
+    {"code": 1, "meaning": "runtime error"},
+    {"code": 2, "meaning": "usage error"}
+  ],
+  "environment": {
+    "respects": ["NO_COLOR", "TERM"],
+    "tty_aware": true,
+    "json_flag": "--json"
+  },
+  "global_flags": [
+    {"name": "--json", "type": "bool", "since": "0.1.0", "stability": "stable"}
+  ],
+  "commands": [
+    {
+      "name": "list",
+      "summary": "List tasks",
+      "since": "0.1.0",
+      "stability": "stable",
+      "exit_codes": [0, 1, 2],
+      "flags": [
+        {
+          "name": "--format",
+          "type": "enum",
+          "choices": ["text", "json", "ndjson"],
+          "default": "text",
+          "since": "0.1.0",
+          "stability": "stable"
+        },
+        {
+          "name": "--limit",
+          "short": "-n",
+          "type": "int",
+          "default": 50,
+          "since": "0.1.0",
+          "stability": "stable"
+        },
+        {
+          "name": "--filter",
+          "type": "string",
+          "since": "1.1.0",
+          "stability": "stable"
+        }
+      ],
+      "stdout_format": "text",
+      "stderr_format": "text",
+      "json_output": {"stable_since": "0.2.0", "schema": "schemas/list.schema.json"}
+    },
+    {
+      "name": "add",
+      "summary": "Add a new task",
+      "since": "0.1.0",
+      "stability": "stable",
+      "exit_codes": [0, 1],
+      "flags": [
+        {
+          "name": "--priority",
+          "type": "enum",
+          "choices": ["low", "medium", "high"],
+          "default": "medium",
+          "since": "0.1.0",
+          "stability": "stable"
+        }
+      ],
+      "stdout_format": "text",
+      "stderr_format": "text"
+    }
+  ]
+}

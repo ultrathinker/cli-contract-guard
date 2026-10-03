@@ -1,0 +1,10 @@
+$ mytool list
+items
+go
+here
+
+--- stderr
+WARN: deprecated flag --bar
+ERROR: connection refused
+
+--- exit 1

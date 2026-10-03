@@ -1,0 +1,15 @@
+$ tasks list --help
+Usage: tasks list [options]
+
+List tasks from the local store.
+
+Options:
+  -n, --limit <N>    Maximum number of tasks to show (default: 20)
+  --format <FMT>     Output format: text or json (default: text)
+  --json             Emit machine-readable JSON
+  --no-color         Disable colored output
+  -h, --help         Show this help and exit
+
+Exit code: 0 on success, 1 on error.
+
+--- exit 0

@@ -1,0 +1,12 @@
+Usage: demo list [options]
+
+List configured items.
+
+Options:
+  -n, --limit <N>     Maximum number of items to show (default: 20)
+  --format <FMT>      Output format: text or json (default: text)
+  --json              Emit machine-readable JSON
+  --no-color          Disable colored output
+  --quiet             Suppress non-essential output
+
+Exit code: 0 on success, 1 on error.

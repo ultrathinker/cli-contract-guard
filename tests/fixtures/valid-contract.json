@@ -1,0 +1,59 @@
+{
+  "schema_version": "1",
+  "tool": {
+    "name": "demo",
+    "display_name": "Demo CLI",
+    "description": "Synthetic fixture for tests"
+  },
+  "stability": {
+    "policy": "minor",
+    "audiences": ["humans", "scripts"]
+  },
+  "streams": {
+    "stdout": "data and primary output",
+    "stderr": "diagnostics, progress, errors"
+  },
+  "exit_codes": [
+    {"code": 0, "meaning": "success"},
+    {"code": 1, "meaning": "general error"},
+    {"code": 2, "meaning": "usage error"}
+  ],
+  "environment": {
+    "respects": ["NO_COLOR", "TERM"],
+    "tty_aware": true,
+    "json_flag": "--json"
+  },
+  "global_flags": [
+    {"name": "--json", "type": "bool", "since": "1.0.0", "stability": "stable"},
+    {"name": "--no-color", "type": "bool", "since": "1.0.0", "stability": "stable"}
+  ],
+  "commands": [
+    {
+      "name": "list",
+      "summary": "List items",
+      "since": "1.0.0",
+      "stability": "stable",
+      "exit_codes": [0, 1],
+      "flags": [
+        {"name": "--format", "type": "enum", "choices": ["json", "text"], "default": "text", "since": "1.0.0", "stability": "stable"},
+        {"name": "--limit", "short": "-n", "type": "int", "default": 20, "since": "1.0.0", "stability": "stable"}
+      ],
+      "stdout_format": "text",
+      "stderr_format": "text",
+      "json_output": {"stable_since": "1.2.0", "schema": "schemas/list.schema.json"}
+    },
+    {
+      "name": "build",
+      "summary": "Build the project",
+      "since": "1.0.0",
+      "stability": "stable",
+      "exit_codes": [0, 1, 2],
+      "flags": [
+        {"name": "--output", "short": "-o", "type": "path", "default": "dist", "since": "1.0.0", "stability": "stable"},
+        {"name": "--watch", "type": "bool", "since": "1.1.0", "stability": "beta"}
+      ],
+      "stdout_format": "text",
+      "stderr_format": "text"
+    }
+  ]
+}

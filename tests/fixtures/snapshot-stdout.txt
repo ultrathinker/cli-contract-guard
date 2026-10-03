@@ -1,0 +1,10 @@
+$ mytool list
+items
+go
+here
+
+--- stderr
+WARN: deprecated flag --foo
+INFO: connecting to upstream
+
+--- exit 0

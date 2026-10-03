@@ -1,0 +1,14 @@
+{
+  "name": "cli-contract-guard",
+  "owner": {
+    "name": "ultrathinker"
+  },
+  "description": "Track your command-line tool's public surface as a versioned contract before you ship.",
+  "plugins": [
+    {
+      "name": "cli-contract-guard",
+      "source": ".",
+      "description": "Keep a versioned contract for your CLI's commands, flags, exit codes and JSON output, and classify snapshot diffs as breaking, compatible or cosmetic before every release."
+    }
+  ]
+}

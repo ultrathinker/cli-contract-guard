@@ -1,0 +1,35 @@
+{
+  "schema_version": "99",
+  "tool": {
+    "name": "Demo Spaces"
+  },
+  "stability": {
+    "policy": "yearly",
+    "audiences": ["robots"]
+  },
+  "exit_codes": [
+    {"code": 0, "meaning": ""},
+    {"code": 0, "meaning": "dup"}
+  ],
+  "global_flags": [
+    {"name": "json", "type": "yeet", "since": "1.0"},
+    {"name": "json", "type": "bool"}
+  ],
+  "commands": [
+    {
+      "name": "Deploy",
+      "summary": 42,
+      "stability": "shiny",
+      "since": "v1",
+      "exit_codes": [0, 999],
+      "stdout_format": "yaml",
+      "arguments": [{"name": "PATH", "required": "yes"}],
+      "flags": [
+        {"name": "--watch", "type": "bool"},
+        {"name": "--watch", "short": "-W", "type": "bool"}
+      ],
+      "json_output": {"stable_since": "vNext"}
+    },
+    "not an object"
+  ]
+}

@@ -1,0 +1,19 @@
+$ tasks list --help
+Usage: tasks list [options]
+
+List tasks from the local store.
+
+Options:
+  -n, --limit <N>        Maximum number of tasks to show (default: 50)
+  --format <FMT>         Output format: text, json, or ndjson (default: text)
+  --json                 Emit machine-readable JSON
+  --filter <PATTERN>     Only show tasks matching PATTERN
+  -h, --help             Show this help and exit
+
+Exit code: 0 on success, 1 on error, 2 on usage error.
+
+Examples:
+  tasks list --limit 5
+  tasks list --format ndjson | jq -c '.id'
+
+--- exit 0

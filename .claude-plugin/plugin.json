@@ -1,0 +1,23 @@
+{
+  "name": "cli-contract-guard",
+  "displayName": "CLI Contract Guard",
+  "version": "0.2.0",
+  "description": "Track your CLI's public surface as a versioned contract; classify snapshot diffs as breaking, compatible, or cosmetic before you ship.",
+  "author": {
+    "name": "ultrathinker"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/ultrathinker/cli-contract-guard",
+  "homepage": "https://github.com/ultrathinker/cli-contract-guard",
+  "documentationUrl": "https://github.com/ultrathinker/cli-contract-guard#readme",
+  "supportUrl": "https://github.com/ultrathinker/cli-contract-guard/issues",
+  "privacyPolicyUrl": "https://github.com/ultrathinker/cli-contract-guard/blob/main/PRIVACY.md",
+  "keywords": [
+    "cli",
+    "command-line",
+    "stability",
+    "contract",
+    "snapshot",
+    "semver"
+  ]
+}
