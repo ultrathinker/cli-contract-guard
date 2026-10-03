@@ -1,7 +1,7 @@
 ---
 description: Run the snapshot diff classifier on two files and print a structured report.
 argument-hint: BEFORE AFTER [--json] [--context N]
-allowed-tools: Bash(python3:*) Bash(python:*) Bash(py:*)
+allowed-tools: Bash(python3 ${CLAUDE_PLUGIN_ROOT}/scripts/classify_snapshot_diff.py:*), Bash(python ${CLAUDE_PLUGIN_ROOT}/scripts/classify_snapshot_diff.py:*), Bash(py -3 ${CLAUDE_PLUGIN_ROOT}/scripts/classify_snapshot_diff.py:*)
 ---
 
 # /contract-snapshot-diff
@@ -20,9 +20,10 @@ report. The contract-review skill then turns the evidence into a verdict.
 ## Behaviour
 
 1. Resolve `BEFORE` and `AFTER` from `$ARGUMENTS` or ask the user.
-2. Run `python ${CLAUDE_PLUGIN_ROOT}/scripts/classify_snapshot_diff.py`
+2. Run `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/classify_snapshot_diff.py`
    with the requested flags. If `python3` is not on PATH, fall back to
-   `python` or `py -3`.
+   `python` or `py -3`. Only this script is pre-approved; do not run
+   anything else through this command.
 3. Print the script's output. Do not re-classify; the deterministic
    evidence is the value here.
 4. Offer to invoke the `contract-review` skill for a full verdict. Do
